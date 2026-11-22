@@ -1,0 +1,20 @@
+{
+  "description": "chisel gates: block unapproved commits, pushes and PR changes, lock a session after each commit, restore context on session start",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|MultiEdit|NotebookEdit",
+        "hooks": [
+          { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/chisel.py\" hook pre-tool-use" }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/chisel.py\" hook session-start" }
+        ]
+      }
+    ]
+  }
+}

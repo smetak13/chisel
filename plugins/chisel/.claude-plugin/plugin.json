@@ -1,0 +1,6 @@
+{
+  "name": "chisel",
+  "version": "0.1.0",
+  "description": "Gated development workflow: grill the task, plan it into slices, one approved TDD commit per slice, reviewed draft PR.",
+  "author": { "name": "smetak13" }
+}
